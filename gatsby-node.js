@@ -39,7 +39,7 @@ module.exports = {
 				async ({ id, language, translations, uri }) =>
 					await createPage({
 						component: require.resolve("./src/templates/page.tsx"),
-						context: { pageId: id, language, uri, translations },
+						context: { id, language, uri, translations },
 						path: uri,
 					})
 			)

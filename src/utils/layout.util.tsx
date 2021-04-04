@@ -1,4 +1,4 @@
-import { ISiteContext, SitePageTranslations } from "../types/site.types";
+import { ISiteContext, SiteTranslations } from "../types/site.types";
 import { SiteContext, defaultSiteContext } from "../context/site.context";
 import { WpLang, WpPage } from "../types/wordpress.types";
 import { Helmet } from "react-helmet";
@@ -23,7 +23,7 @@ export const wrapPageElement = ({
 	element,
 	props,
 }: Props): React.ReactElement => {
-	const translations: SitePageTranslations = {};
+	const translations: SiteTranslations = {};
 	props.pageContext.translations?.forEach(translation => {
 		if (translation.language && translation.uri) {
 			translations[translation.language.code] = {

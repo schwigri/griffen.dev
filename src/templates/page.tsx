@@ -72,8 +72,8 @@ class PageTemplate extends React.Component<Props> {
 export default PageTemplate;
 
 export const query = graphql`
-	query PageTemplateQuery($pageId: String!) {
-		page: wpPage(id: { eq: $pageId }) {
+	query PageTemplateQuery($id: String!) {
+		page: wpPage(id: { eq: $id }) {
 			content
 			id
 			isFrontPage
