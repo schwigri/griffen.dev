@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="https://www.griffen.dev">
-	<img alt="Blue infinity symbol logo" src=".github/icon.png" />
+	<img alt="Blue infinity symbol logo" src=".github/icon.png" width="128" />
 </a>
 
 # griffen.dev
