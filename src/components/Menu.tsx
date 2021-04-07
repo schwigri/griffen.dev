@@ -29,11 +29,19 @@ const MenuLink = styled(LocalLink)`
 		@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 			transform: translate3d(-1em, 0, 0);
 			text-decoration: none;
+
+			[dir="rtl"] & {
+				transform: translate3d(1em, 0, 0);
+			}
 		}
 
 		&::after {
 			opacity: 1;
 			transform: translate3d(1.25em, 0, 0);
+
+			[dir="rtl"] & {
+				transform: translate3d(-1.25em, 0, 0);
+			}
 		}
 	}
 
@@ -49,6 +57,13 @@ const MenuLink = styled(LocalLink)`
 		right: 0;
 		top: 0;
 
+		[dir="rtl"] & {
+			content: "→";
+			left: 0;
+			right: unset;
+			transform: translate3d(-0.75em, 0, 0);
+		}
+
 		@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 			display: flex;
 		}
@@ -61,6 +76,11 @@ const Page = styled("li")`
 	@media (min-width: ${({ theme }) => `${theme.breakpoints.md}px`}) {
 		margin-bottom: 0;
 		margin-left: 4em;
+
+		[dir="rtl"] & {
+			margin-left: 0;
+			margin-right: 4em;
+		}
 	}
 `;
 
@@ -167,10 +187,10 @@ class Menu extends React.Component<Props> {
 						<Wrapper $open={!!open}>
 							<Pages role={"list"}>
 								{menu.menuItems?.nodes
-									?.filter(x => !x.url?.includes("http"))
+									?.filter(x => !x.connectedNode?.node?.uri?.includes("http"))
 									.map(menuItem => (
 										<Page key={menuItem.id}>
-											<MenuLink to={menuItem.url || "/"}>
+											<MenuLink to={menuItem.connectedNode?.node?.uri || "/"}>
 												{menuItem.label}
 											</MenuLink>
 										</Page>
@@ -206,9 +226,13 @@ function getMenu(props: BaseProps): React.ReactElement {
 				id
 				menuItems {
 					nodes {
+						connectedNode {
+							node {
+								uri
+							}
+						}
 						id
 						label
-						url
 					}
 				}
 			}
@@ -217,7 +241,11 @@ function getMenu(props: BaseProps): React.ReactElement {
 				id
 				menuItems {
 					nodes {
-						id
+						connectedNode {
+							node {
+								uri
+							}
+						}
 						label
 						url
 					}
@@ -228,7 +256,11 @@ function getMenu(props: BaseProps): React.ReactElement {
 				id
 				menuItems {
 					nodes {
-						id
+						connectedNode {
+							node {
+								uri
+							}
+						}
 						label
 						url
 					}

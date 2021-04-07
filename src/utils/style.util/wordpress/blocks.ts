@@ -23,6 +23,11 @@ export const columns = css`
 
 			&:not(:first-child) {
 				margin-left: var(--responsive--spacing);
+
+				[dir="rtl"] & {
+					margin-left: 0;
+					margin-right: var(--responsive--spacing);
+				}
 			}
 		}
 

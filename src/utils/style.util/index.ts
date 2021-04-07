@@ -22,8 +22,8 @@ export const GlobalStyle = createGlobalStyle`
 		}
 
 		--fonts--code: "JetBrains Mono", monospace;
-		--fonts--copy: "Work Sans", "M PLUS 1p", sans-serif;
-		--fonts--heading: Prompt, "M PLUS 1p", sans-serif;
+		--fonts--copy: "Work Sans", "M PLUS 1p", "Noto Sans Arabic", sans-serif;
+		--fonts--heading: Prompt, "M PLUS 1p", "Noto Sans Arabic", sans-serif;
 
 		--global--content-spacing: 6.4rem;
 		--global--content-width: 1220px;

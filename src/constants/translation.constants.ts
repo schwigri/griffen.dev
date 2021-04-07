@@ -15,7 +15,7 @@ export enum TranslationString {
 
 export const EnglishTranslations: Translations = {
 	[TranslationString.CloseMenu]: "Close menu",
-	[TranslationString.Copyright]: "Copyright © 2021 Griffen Schwiesow",
+	[TranslationString.Copyright]: "© 2021 Griffen Schwiesow",
 	[TranslationString.LovePeaceReact]: "Made with love, peace, and React",
 	[TranslationString.OpenMenu]: "Open menu",
 	[TranslationString.PageNotFound]: "Page not found",
@@ -25,6 +25,15 @@ export const EnglishTranslations: Translations = {
 	[TranslationString.TitleShort]: "Griffen",
 	[TranslationString.TitleTemplate]: "%s — Griffen Schwiesow",
 	[TranslationString.Untitled]: "Untitled",
+};
+
+export const ArabicTranslations: Translations = {
+	...EnglishTranslations,
+
+	[TranslationString.Copyright]: "© 2021 غريفين شویسوو",
+	[TranslationString.LovePeaceReact]: "مصنوع بالحب والسلام وريأكت",
+	[TranslationString.Title]: "غريفين شویسوو",
+	[TranslationString.TitleShort]: "غريفين",
 };
 
 export const JapaneseTranslations: Translations = {
