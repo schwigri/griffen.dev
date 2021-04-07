@@ -1,4 +1,5 @@
 import {
+	ArabicTranslations,
 	EnglishTranslations,
 	JapaneseTranslations,
 	TranslationString,
@@ -13,6 +14,10 @@ export const getTranslation = (
 ): string => {
 	let translations = EnglishTranslations;
 	switch (lang) {
+		case "AR":
+			translations = ArabicTranslations;
+			break;
+
 		case "JA":
 			translations = JapaneseTranslations;
 			break;

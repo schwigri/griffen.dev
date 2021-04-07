@@ -90,7 +90,12 @@ export interface WpMenu extends WpItem {
 	slug?: string;
 }
 
+export interface WpMenuItemConnectedNode extends WpPage {
+	uri?: string;
+}
+
 export interface WpMenuItem extends WpItem, WpHasParent {
+	connectedNode?: WpNode<WpMenuItemConnectedNode>;
 	cssClasses?: string;
 	description?: string;
 	label?: string;

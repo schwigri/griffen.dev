@@ -6,6 +6,7 @@ import { Layout } from "../components/Layout";
 import { Provider } from "react-redux";
 import React from "react";
 import { createStore } from "./store.util";
+import { getLangCode } from "./localization.util";
 
 interface Props {
 	element: React.ReactNode;
@@ -36,6 +37,7 @@ export const wrapPageElement = ({
 
 	if (props.pageContext.language) {
 		lang = props.pageContext.language;
+		if (!lang.code) lang.code = getLangCode(lang);
 		sessionStorage.setItem("lang", JSON.stringify(props.pageContext.language));
 	} else {
 		const sessionLang = sessionStorage.getItem("lang");
